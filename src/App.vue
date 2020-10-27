@@ -1,26 +1,21 @@
 <template>
-  <div id="app">
+  <div class="all">
+    <Header />
     <router-view />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue';
-// import Test from './components/Test';
+import { Header } from './components';
 
 export default {
   name: 'App',
   components: {
-    //   HelloWorld,
-    //   Test,
+    Header,
   },
 };
 </script>
 
-<style>
-#app {
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+@import './styles/_base.scss';
 </style>

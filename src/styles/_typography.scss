@@ -1,0 +1,36 @@
+@mixin title($isBold: false, $color: $titleGray) {
+  @if $isBold {
+    font-weight: bold;
+  } @else {
+    font-weight: normal;
+  }
+  color: $color;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+@mixin content($isBold: false, $color: $darkGray) {
+  @if $isBold {
+    font-weight: bold;
+  } @else {
+    font-weight: normal;
+  }
+  color: $color;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.3px;
+}
+
+@mixin description($isBold: false, $color: $darkGray) {
+  @if $isBold {
+    font-weight: bold;
+  } @else {
+    font-weight: normal;
+  }
+  color: $color;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.3px;
+}
