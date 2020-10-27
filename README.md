@@ -22,3 +22,12 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### packages
+
+```shell
+
+$ yarn add -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue
+
+```
