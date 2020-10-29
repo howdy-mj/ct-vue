@@ -20,6 +20,7 @@ export default {
   border-radius: 5px;
   width: 100%;
   height: 4rem;
+
   &__text {
     color: #ffffff;
     font-size: 2.2rem;

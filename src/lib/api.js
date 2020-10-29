@@ -12,6 +12,8 @@ export const feedApi = {
     }),
 };
 
+const base = 'https://problem.comento.kr';
+
 export const feed = `${base}/api/list`;
 export const filter = `${base}/api/category`;
 export const ads = `${base}/api/ads`;

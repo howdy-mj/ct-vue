@@ -11,6 +11,7 @@
         </div>
         <button class="feed__filter--button">필터</button>
       </div>
+
       <FeedContainer
         categoryName="apple"
         contentId="123"
@@ -30,6 +31,7 @@
 
 <script>
 import { FeedContainer, Sponsored, Button } from '../../components/Template';
+// import axios from 'axios';
 
 export default {
   components: {
@@ -37,14 +39,38 @@ export default {
     Sponsored,
     Button,
   },
+  data() {
+    return {
+      feedData: [],
+    };
+  },
+  created: function() {
+    // this.getFeed();
+    console.log('created', this.feedData);
+  },
+  mounted: function() {
+    this.getFeed();
+    console.log('mounted', this.feedData);
+  },
+  methods: {
+    getFeed() {
+      const headers = { 'Content-Type': 'application/json' };
+      fetch('https://problem.comento.kr/api/list?page=1&ord=asc&category[]=1&limit=1', { headers })
+        .then(res => res.json())
+        .then(res => console.log(res.data))
+        .catch(error => console.error(error));
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
 .feed {
   max-width: $maxWidth;
+  padding: 0 3rem;
   margin: 0 auto;
   display: flex;
+  height: 95vh;
 
   &__login {
     width: 23.5rem;
@@ -57,6 +83,7 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.4rem;
+    background-color: #ffffff;
 
     &--order {
       display: flex;
@@ -81,12 +108,15 @@ export default {
       border: 1px solid $borderColor;
       width: 4.8rem;
       border-radius: 3px;
+      background-color: #ffffff;
     }
   }
 }
 
 @include respond(tablet) {
   .feed {
+    padding: 0;
+    background-color: $borderColor;
     &__login {
       display: none;
     }

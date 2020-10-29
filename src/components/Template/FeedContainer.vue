@@ -22,6 +22,7 @@
 export default {
   name: 'FeedContainer',
   props: {
+    feedData: Array,
     categoryName: String,
     contentId: String,
     userId: String,
@@ -38,6 +39,7 @@ export default {
   border-radius: 0.5rem;
   padding: 3rem 2rem;
   margin-bottom: 3rem;
+  background-color: #ffffff;
   &__category {
     display: flex;
     justify-content: space-between;

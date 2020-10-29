@@ -18,4 +18,8 @@ export default {
 
 <style scoped>
 @import './styles/_base.scss';
+
+.all {
+  height: 100vh;
+}
 </style>

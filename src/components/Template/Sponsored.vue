@@ -29,6 +29,7 @@ export default {
   border: 1px solid $borderColor;
   border-radius: 0.5rem;
   padding: 3rem 2rem;
+  background-color: #ffffff;
 
   &__name {
     @include description($color: $lightGray);

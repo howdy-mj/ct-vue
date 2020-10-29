@@ -23,10 +23,6 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-
-  @media only screen and (max-width: $bp-tablet) {
-    background-color: #e1e4e7;
-  }
 }
 
 a {
