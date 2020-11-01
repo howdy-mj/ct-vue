@@ -1,19 +1,25 @@
 <template>
-  <section class="feedContainer">
-    <div class="feedContainer__category">
-      <div class="feedContainer__category--name">
-        {{ categoryName }}
+  <section>
+    <div class="feedContainer" v-for="feed in feedData" :key="feed.id">
+      <div class="feedContainer__category">
+        <div class="feedContainer__category--name">
+          {{ feed.category_id }}
+        </div>
+        <div class="feedContainer__category--id">{{ feed.id }}</div>
       </div>
-      <div class="feedContainer__category--id">{{ contentId }}</div>
-    </div>
-    <div class="feedContainer--line" />
-    <div class="feedContainer__create">
-      <div class="feedContainer__create--userId">{{ userId }}</div>
-      <div class="feedContainer__create--date">{{ date }}</div>
-    </div>
-    <div class="feedContainer__detail">
-      <div class="feedContainer__detail--title">{{ title }}</div>
-      <div class="feedContainer__detail--content">{{ content }}</div>
+      <div class="feedContainer--line" />
+      <div class="feedContainer__create">
+        <div class="feedContainer__create--userId">{{ feed.user_id }}</div>
+        <div class="feedContainer__create--date">{{ feed.created_at.slice(0, 10) }}</div>
+      </div>
+      <div class="feedContainer__detail">
+        <div class="feedContainer__detail--title">
+          {{ feed.title.length > 100 ? feed.title.slice(0, 100) + '...' : feed.title }}
+        </div>
+        <div class="feedContainer__detail--content">
+          {{ feed.contents.length > 70 ? feed.contents.slice(0, 70) + '...' : feed.contents }}
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -23,12 +29,6 @@ export default {
   name: 'FeedContainer',
   props: {
     feedData: Array,
-    categoryName: String,
-    contentId: String,
-    userId: String,
-    date: String,
-    title: String,
-    content: String,
   },
 };
 </script>
@@ -40,6 +40,7 @@ export default {
   padding: 3rem 2rem;
   margin-bottom: 3rem;
   background-color: #ffffff;
+
   &__category {
     display: flex;
     justify-content: space-between;
